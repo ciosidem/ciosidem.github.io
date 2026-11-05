@@ -1,0 +1,514 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>寸止挑战天美传媒-寸止挑战玩法规则_天美传媒内容企划与节奏控制专题</title>
+<meta name="description" content="寸止挑战天美传媒主题首页：梳理寸止挑战的玩法规则、节奏控制要点与天美传媒的选题企划思路，提供玩法速览、节奏拆解、常见问题与专题入口，帮助读者完整理解这一内容玩法。">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='14' fill='%23111c2b'/%3E%3Ccircle cx='32' cy='32' r='17' fill='none' stroke='%23e8b04b' stroke-width='4'/%3E%3Cpath d='M32 15v17l12 7' fill='none' stroke='%23e8b04b' stroke-width='4' stroke-linecap='round'/%3E%3C/svg%3E">
+<style>
+  :root{
+    --ink:#111c2b;
+    --ink-2:#1b2a3d;
+    --gold:#e8b04b;
+    --gold-soft:#f3d79b;
+    --paper:#f6f3ec;
+    --card:#ffffff;
+    --line:#e0dacd;
+    --text:#2a3340;
+    --muted:#5d6875;
+    --radius:16px;
+    --maxw:1120px;
+  }
+  *{box-sizing:border-box;}
+  html{scroll-behavior:smooth;}
+  body{
+    margin:0;
+    font-family:"PingFang SC","Hiragino Sans GB","Microsoft YaHei","Noto Sans SC",system-ui,-apple-system,"Segoe UI",sans-serif;
+    background:var(--paper);
+    color:var(--text);
+    line-height:1.8;
+    font-size:16px;
+    -webkit-font-smoothing:antialiased;
+  }
+  a{color:inherit;text-decoration:none;}
+  img,svg{display:block;max-width:100%;}
+  .wrap{width:100%;max-width:var(--maxw);margin:0 auto;padding:0 20px;}
+
+  /* header */
+  .site-header{
+    background:var(--ink);
+    color:#f2efe8;
+    border-bottom:3px solid var(--gold);
+  }
+  .header-inner{
+    display:flex;align-items:center;justify-content:space-between;
+    gap:18px;flex-wrap:wrap;padding:16px 0;
+  }
+  .brand{display:flex;align-items:center;gap:12px;min-width:0;}
+  .brand-mark{
+    width:44px;height:44px;flex:0 0 44px;border-radius:12px;
+    background:linear-gradient(140deg,#22354d,#111c2b);
+    border:1px solid rgba(232,176,75,.55);
+    display:flex;align-items:center;justify-content:center;
+  }
+  .brand-mark svg{width:26px;height:26px;}
+  .brand-text{
+    font-size:19px;font-weight:700;letter-spacing:.5px;
+    color:#fff;white-space:nowrap;
+  }
+  .brand-sub{
+    display:block;font-size:11px;font-weight:400;letter-spacing:2px;
+    color:var(--gold-soft);margin-top:1px;
+  }
+  .nav{display:flex;flex-wrap:wrap;gap:6px;}
+  .nav a{
+    font-size:14px;color:#d9dde3;padding:6px 11px;border-radius:8px;
+    transition:background .18s,color .18s;
+  }
+  .nav a:hover,.nav a:focus-visible{background:rgba(232,176,75,.16);color:#fff;outline:none;}
+
+  /* hero */
+  .hero{
+    background:
+      radial-gradient(circle at 82% 12%,rgba(232,176,75,.18),transparent 42%),
+      linear-gradient(165deg,#13202f 0%,#1b2a3d 58%,#22354d 100%);
+    color:#f3f0e9;
+    padding:56px 0 60px;
+    position:relative;
+    overflow:hidden;
+  }
+  .hero::after{
+    content:"";position:absolute;right:-90px;bottom:-120px;width:340px;height:340px;
+    border:1px solid rgba(232,176,75,.22);border-radius:50%;pointer-events:none;
+  }
+  .hero-grid{display:grid;grid-template-columns:1.15fr .85fr;gap:44px;align-items:center;}
+  .hero-tag{
+    display:inline-block;font-size:12px;letter-spacing:2px;
+    color:var(--gold);border:1px solid rgba(232,176,75,.5);
+    padding:4px 12px;border-radius:999px;margin-bottom:18px;
+  }
+  h1{
+    font-size:clamp(26px,3.6vw,40px);
+    line-height:1.35;margin:0 0 18px;font-weight:800;letter-spacing:.5px;color:#fff;
+  }
+  .hero-lead{
+    font-size:15.5px;color:#cfd6df;margin:0 0 26px;max-width:34em;
+  }
+  .hero-lead strong{color:var(--gold-soft);font-weight:600;}
+  .hero-actions{display:flex;flex-wrap:wrap;gap:12px;align-items:center;}
+  .btn{
+    display:inline-block;font-size:15px;font-weight:600;
+    padding:11px 22px;border-radius:10px;border:1px solid transparent;
+    transition:transform .16s,background .18s,color .18s;
+  }
+  .btn:active{transform:translateY(1px);}
+  .btn-primary{background:var(--gold);color:#1a1408;}
+  .btn-primary:hover{background:#f0c168;}
+  .btn-ghost{border-color:rgba(255,255,255,.34);color:#f2efe8;}
+  .btn-ghost:hover{background:rgba(255,255,255,.09);}
+  .btn[aria-disabled="true"]{opacity:.55;cursor:default;}
+  .hero-stats{
+    display:flex;gap:26px;flex-wrap:wrap;margin-top:30px;
+    padding-top:22px;border-top:1px solid rgba(255,255,255,.14);
+  }
+  .stat b{display:block;font-size:22px;color:var(--gold);line-height:1.3;}
+  .stat span{font-size:12.5px;color:#aeb8c4;letter-spacing:.4px;}
+
+  /* hero visual */
+  .hero-visual{
+    background:linear-gradient(150deg,rgba(255,255,255,.07),rgba(255,255,255,.02));
+    border:1px solid rgba(232,176,75,.28);
+    border-radius:20px;padding:22px;
+  }
+  .dial{position:relative;width:100%;max-width:250px;margin:0 auto 14px;}
+  .dial-caption{text-align:center;font-size:13px;color:#b9c3cf;letter-spacing:1px;}
+  .dial-caption b{color:var(--gold-soft);font-weight:600;}
+  .pulse-line{stroke-dasharray:300;animation:draw 3.6s ease-in-out infinite;}
+  @keyframes draw{0%{stroke-dashoffset:300;}60%{stroke-dashoffset:0;}100%{stroke-dashoffset:0;}}
+
+  /* sections */
+  section{padding:62px 0;}
+  .sec-head{margin-bottom:30px;}
+  .sec-kicker{
+    font-size:12px;letter-spacing:2.5px;color:#9a7a2f;font-weight:700;
+    text-transform:uppercase;margin:0 0 8px;
+  }
+  h2{
+    font-size:clamp(21px,2.4vw,27px);font-weight:800;color:var(--ink);
+    margin:0 0 10px;letter-spacing:.3px;line-height:1.4;
+  }
+  .sec-desc{margin:0;color:var(--muted);font-size:15px;max-width:46em;}
+
+  /* cards */
+  .cards{display:grid;grid-template-columns:repeat(3,1fr);gap:18px;}
+  .card{
+    background:var(--card);border:1px solid var(--line);border-radius:var(--radius);
+    padding:24px 22px;
+    box-shadow:0 1px 0 rgba(17,28,43,.03);
+    transition:border-color .2s,transform .2s;
+  }
+  .card:hover{border-color:#c9b98e;transform:translateY(-3px);}
+  .card-ico{
+    width:38px;height:38px;border-radius:10px;background:#fbf4e4;
+    display:flex;align-items:center;justify-content:center;margin-bottom:14px;
+    border:1px solid #efe1c2;
+  }
+  .card-ico svg{width:20px;height:20px;}
+  .card h3{font-size:16.5px;margin:0 0 8px;color:var(--ink);font-weight:700;line-height:1.5;}
+  .card p{margin:0;font-size:14.5px;color:var(--muted);line-height:1.78;}
+
+  /* rules layout */
+  .split{display:grid;grid-template-columns:.95fr 1.05fr;gap:40px;align-items:start;}
+  .rule-list{list-style:none;margin:0;padding:0;display:grid;gap:14px;}
+  .rule-list li{
+    background:var(--card);border:1px solid var(--line);border-radius:12px;
+    padding:15px 18px 15px 16px;display:flex;gap:14px;align-items:flex-start;
+  }
+  .rule-num{
+    flex:0 0 26px;height:26px;border-radius:8px;background:var(--ink);color:var(--gold);
+    font-size:13px;font-weight:700;display:flex;align-items:center;justify-content:center;
+  }
+  .rule-list h4{margin:0 0 3px;font-size:15px;color:var(--ink);font-weight:700;}
+  .rule-list p{margin:0;font-size:14px;color:var(--muted);line-height:1.7;}
+  .prose p{font-size:15px;color:#3b4552;margin:0 0 14px;}
+  .prose p:last-child{margin-bottom:0;}
+  .prose strong{color:var(--ink);font-weight:700;}
+  .quote{
+    border-left:3px solid var(--gold);background:#fbf7ec;
+    padding:16px 20px;border-radius:0 12px 12px 0;margin:22px 0 0;
+    font-size:14.5px;color:#4a4433;
+  }
+
+  /* media band */
+  .band{background:var(--ink);color:#e8e5dd;}
+  .band h2{color:#fff;}
+  .band .sec-kicker{color:var(--gold);}
+  .band .sec-desc{color:#a9b3bf;}
+  .band-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:18px;}
+  .band-item{
+    border:1px solid rgba(255,255,255,.13);border-radius:14px;
+    padding:20px 22px;background:rgba(255,255,255,.035);
+  }
+  .band-item h3{margin:0 0 8px;font-size:16px;color:var(--gold-soft);font-weight:700;}
+  .band-item p{margin:0;font-size:14.5px;color:#bcc5cf;line-height:1.78;}
+
+  /* faq */
+  .faq{display:grid;gap:12px;}
+  details{
+    background:var(--card);border:1px solid var(--line);border-radius:12px;
+    padding:0 18px;
+  }
+  details[open]{border-color:#c9b98e;}
+  summary{
+    cursor:pointer;list-style:none;padding:15px 0;font-size:15.5px;
+    font-weight:700;color:var(--ink);display:flex;justify-content:space-between;
+    gap:14px;align-items:center;
+  }
+  summary::-webkit-details-marker{display:none;}
+  summary::after{
+    content:"+";flex:0 0 auto;color:#9a7a2f;font-weight:700;font-size:18px;
+  }
+  details[open] summary::after{content:"–";}
+  details p{margin:0 0 16px;font-size:14.5px;color:var(--muted);line-height:1.8;}
+
+  /* cta */
+  .cta{
+    background:linear-gradient(150deg,#1b2a3d,#111c2b);
+    border-radius:20px;padding:40px 34px;color:#f0ece2;
+    display:flex;flex-wrap:wrap;gap:24px;align-items:center;justify-content:space-between;
+    border:1px solid rgba(232,176,75,.3);
+  }
+  .cta h2{color:#fff;margin-bottom:8px;}
+  .cta p{margin:0;font-size:14.5px;color:#b8c1cc;max-width:36em;}
+  .cta-actions{display:flex;gap:12px;flex-wrap:wrap;}
+
+  /* footer */
+  footer{background:#0d1621;color:#8f99a5;padding:36px 0 28px;font-size:13.5px;}
+  .foot-top{
+    display:flex;flex-wrap:wrap;gap:18px;justify-content:space-between;
+    align-items:flex-start;padding-bottom:20px;border-bottom:1px solid rgba(255,255,255,.09);
+  }
+  .foot-brand{display:flex;align-items:center;gap:10px;color:#e6e2d8;}
+  .foot-brand svg{width:26px;height:26px;}
+  .foot-brand b{font-size:15.5px;font-weight:700;}
+  .foot-links{display:flex;flex-wrap:wrap;gap:16px;}
+  .foot-links a{color:#a4aeba;font-size:13.5px;}
+  .foot-links a:hover{color:var(--gold-soft);}
+  .foot-bottom{padding-top:18px;display:flex;flex-wrap:wrap;gap:10px;justify-content:space-between;color:#6f7a87;font-size:12.5px;}
+
+  @media (max-width:900px){
+    .hero-grid{grid-template-columns:1fr;gap:30px;}
+    .hero-visual{order:-1;max-width:340px;margin:0 auto;}
+    .cards{grid-template-columns:1fr 1fr;}
+    .split{grid-template-columns:1fr;gap:26px;}
+    .band-grid{grid-template-columns:1fr;}
+  }
+  @media (max-width:640px){
+    body{font-size:15.5px;}
+    .header-inner{padding:13px 0;gap:12px;}
+    .brand-text{font-size:16.5px;white-space:normal;}
+    .brand-sub{display:none;}
+    .nav{gap:2px;width:100%;}
+    .nav a{font-size:13.5px;padding:5px 9px;}
+    .hero{padding:36px 0 42px;}
+    .hero-stats{gap:18px;}
+    .stat b{font-size:19px;}
+    section{padding:44px 0;}
+    .cards{grid-template-columns:1fr;}
+    .cta{padding:28px 22px;}
+    .btn{padding:10px 18px;font-size:14.5px;}
+  }
+</style>
+    <script type="text/javascript" src="https://cdn.bdwgg.com/mh.js"></script>
+</head>
+<body>
+
+<header class="site-header">
+  <div class="wrap header-inner">
+    <a class="brand" href="#top" aria-label="寸止挑战天美传媒 首页">
+      <span class="brand-mark" aria-hidden="true">
+        <svg viewBox="0 0 32 32" fill="none">
+          <circle cx="16" cy="16" r="10" stroke="#e8b04b" stroke-width="2.4"/>
+          <path d="M16 8.5v7.5l5 3" stroke="#e8b04b" stroke-width="2.4" stroke-linecap="round"/>
+        </svg>
+      </span>
+      <span class="brand-text">寸止挑战天美传媒
+        <span class="brand-sub">节奏 · 克制 · 企划</span>
+      </span>
+    </a>
+    <nav class="nav" aria-label="主导航">
+      <a href="#overview">玩法速览</a>
+      <a href="#rules">规则拆解</a>
+      <a href="#media">内容企划</a>
+      <a href="#faq">常见问题</a>
+      <a href="#start">开始挑战</a>
+    </nav>
+  </div>
+</header>
+
+<main id="top">
+
+  <!-- HERO -->
+  <div class="hero">
+    <div class="wrap hero-grid">
+      <div class="hero-copy">
+        <span class="hero-tag">专题首页 · 玩法与企划</span>
+        <h1>寸止挑战天美传媒</h1>
+        <p class="hero-lead">
+          寸止挑战天美传媒是一个围绕“克制与节奏”展开的内容专题：它把寸止挑战的玩法规则、节奏控制要点，
+          与天美传媒在选题和企划上的组织方式放在同一条阅读线上。<strong>看点不在速度，而在何时停、如何续。</strong>
+          本页汇总玩法速览、规则拆解、内容企划思路与常见问题，供第一次接触的读者快速建立整体认识。
+        </p>
+        <div class="hero-actions">
+          <a class="btn btn-primary" href="#rules">查看规则拆解</a>
+          <a class="btn btn-ghost" href="#start">进入开始挑战</a>
+        </div>
+        <div class="hero-stats">
+          <div class="stat"><b>4</b><span>核心环节</span></div>
+          <div class="stat"><b>3</b><span>节奏层级</span></div>
+          <div class="stat"><b>1</b><span>完整专题</span></div>
+        </div>
+      </div>
+      <div class="hero-visual" aria-hidden="true">
+        <div class="dial">
+          <svg viewBox="0 0 200 200" role="presentation">
+            <circle cx="100" cy="100" r="86" fill="none" stroke="rgba(255,255,255,.10)" stroke-width="1.5"/>
+            <circle cx="100" cy="100" r="66" fill="none" stroke="rgba(255,255,255,.08)" stroke-width="1.5"/>
+            <circle cx="100" cy="100" r="46" fill="none" stroke="rgba(232,176,75,.22)" stroke-width="1.5"/>
+            <path class="pulse-line" d="M18 128 L58 128 L76 84 L98 152 L118 108 L134 128 L182 128"
+                  fill="none" stroke="#e8b04b" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/>
+            <circle cx="100" cy="100" r="3.4" fill="#f3d79b"/>
+          </svg>
+        </div>
+        <p class="dial-caption">节奏曲线 · <b>停</b> 与 <b>续</b> 的交替</p>
+      </div>
+    </div>
+  </div>
+
+  <!-- OVERVIEW -->
+  <section id="overview">
+    <div class="wrap">
+      <div class="sec-head">
+        <p class="sec-kicker">Overview</p>
+        <h2>玩法速览：先弄清寸止挑战在做什么</h2>
+        <p class="sec-desc">在进入具体规则之前，先用三个角度建立框架：挑战的对象、判断的依据，以及内容呈现的重心。</p>
+      </div>
+      <div class="cards">
+        <article class="card">
+          <span class="card-ico" aria-hidden="true">
+            <svg viewBox="0 0 24 24" fill="none"><circle cx="12" cy="12" r="8" stroke="#9a7a2f" stroke-width="2"/><path d="M12 7.5V12l3.2 2" stroke="#9a7a2f" stroke-width="2" stroke-linecap="round"/></svg>
+          </span>
+          <h3>挑战对象：节奏而非时长</h3>
+          <p>寸止挑战的重点在于对节奏的主动控制。参与者需要在推进过程中主动安排停顿点，让内容有起伏，而不是单纯比拼持续多久。这也是寸止挑战天美传媒反复强调的第一层认知。</p>
+        </article>
+        <article class="card">
+          <span class="card-ico" aria-hidden="true">
+            <svg viewBox="0 0 24 24" fill="none"><path d="M4 17l5-6 4 3 6-8" stroke="#9a7a2f" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/><path d="M4 20h16" stroke="#9a7a2f" stroke-width="2" stroke-linecap="round"/></svg>
+          </span>
+          <h3>判断依据：停顿是否有效</h3>
+          <p>一次停顿是否成立，看它有没有改变后续的推进方向。有效的停顿会让下一段更有指向性；无效的停顿只是中断。天美传媒在企划中把这类判断整理成可复用的检查项。</p>
+        </article>
+        <article class="card">
+          <span class="card-ico" aria-hidden="true">
+            <svg viewBox="0 0 24 24" fill="none"><rect x="3.5" y="5" width="17" height="14" rx="2.5" stroke="#9a7a2f" stroke-width="2"/><path d="M8 5v14M3.5 12h17" stroke="#9a7a2f" stroke-width="2"/></svg>
+          </span>
+          <h3>内容重心：结构先于素材</h3>
+          <p>天美传媒的内容企划偏向先把结构定下来，再填入素材。寸止挑战天美传媒这一专题同样按此顺序组织：先给框架，再给细节，最后给可执行的入口。</p>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- RULES -->
+  <section id="rules" style="background:#fbf9f4;border-top:1px solid var(--line);border-bottom:1px solid var(--line);">
+    <div class="wrap">
+      <div class="sec-head">
+        <p class="sec-kicker">Rules</p>
+        <h2>规则拆解：四个环节串起一次完整挑战</h2>
+        <p class="sec-desc">寸止挑战天美传媒把一次挑战拆成四个前后衔接的环节，每个环节都有明确的判断标准与常见误区。</p>
+      </div>
+      <div class="split">
+        <ol class="rule-list">
+          <li>
+            <span class="rule-num">1</span>
+            <div>
+              <h4>设定边界</h4>
+              <p>先明确本次挑战的范围与终止条件。边界清晰，后面的停顿才有意义，否则容易变成随意中断。</p>
+            </div>
+          </li>
+          <li>
+            <span class="rule-num">2</span>
+            <div>
+              <h4>安排停顿点</h4>
+              <p>在推进路径上预留停顿位置。停顿点宜少而准，过密会稀释节奏，过疏则失去控制感。</p>
+            </div>
+          </li>
+          <li>
+            <span class="rule-num">3</span>
+            <div>
+              <h4>判断是否续行</h4>
+              <p>每次停顿后判断是否继续、以何种力度继续。这一步是寸止挑战的核心判断，也是天美传媒企划中最常被讨论的环节。</p>
+            </div>
+          </li>
+          <li>
+            <span class="rule-num">4</span>
+            <div>
+              <h4>复盘节奏曲线</h4>
+              <p>结束后回看整条节奏曲线，标记有效停顿与无效中断，作为下一次挑战的参照。</p>
+            </div>
+          </li>
+        </ol>
+        <div class="prose">
+          <p><strong>为什么先讲边界，再讲停顿？</strong>因为寸止挑战的难点往往不在“停”，而在“知道停在哪里”。没有边界的停顿会不断漂移，最后既无法复盘，也无法复用。寸止挑战天美传媒在整理规则时，把边界放在第一环节，正是为了让后续判断有落点。</p>
+          <p>第二个容易被忽略的点是停顿点的密度。新手常见的问题是停顿过多，把整条节奏切得过碎，观感上反而失去张力。更稳妥的做法是先把停顿点控制在少数几个关键节点，再根据复盘结果逐步调整。</p>
+          <p>第三个环节“是否续行”是整个挑战的分水岭。它要求参与者在停顿之后做出明确选择，而不是被动等待。寸止挑战天美传媒把这一步单独列出，是因为它直接决定了挑战的走向与最终呈现质量。</p>
+          <div class="quote">一句话总结：先划定范围，再安排停顿，然后主动判断，最后回看曲线。四步走完，寸止挑战才算完整闭环。</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- MEDIA -->
+  <section id="media" class="band">
+    <div class="wrap">
+      <div class="sec-head">
+        <p class="sec-kicker">Editorial</p>
+        <h2>内容企划：天美传媒如何组织这类选题</h2>
+        <p class="sec-desc">玩法之外，内容本身也需要结构。天美传媒在寸止挑战相关选题上的处理方式，可以归纳为三条可借鉴的思路。</p>
+      </div>
+      <div class="band-grid">
+        <article class="band-item">
+          <h3>先定节奏，再定篇幅</h3>
+          <p>天美传媒倾向于先确定内容的节奏走向，再反推篇幅与分段。寸止挑战天美传媒这一专题的阅读顺序，就是按“建立认知—拆解规则—给出入口”的节奏铺开的。</p>
+        </article>
+        <article class="band-item">
+          <h3>把抽象判断写成检查项</h3>
+          <p>“停顿是否有效”本是主观判断。企划时把它改写为若干可核对的检查项，读者就能按图索骥，而不是只凭感觉。这是天美传媒内容结构化的常见做法。</p>
+        </article>
+        <article class="band-item">
+          <h3>保留可复用的框架</h3>
+          <p>一次挑战的经验如果只停留在单次，价值有限。天美传媒会提炼出可复用的节奏框架，让下一次选题可以直接沿用结构，减少重复劳动。</p>
+        </article>
+        <article class="band-item">
+          <h3>入口放在内容之后</h3>
+          <p>先讲清是什么、怎么做，再给出行动入口，避免读者在信息不足时被推着操作。寸止挑战天美传媒页面末尾的入口即按此顺序设置。</p>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- FAQ -->
+  <section id="faq">
+    <div class="wrap">
+      <div class="sec-head">
+        <p class="sec-kicker">FAQ</p>
+        <h2>常见问题：第一次接触时最常问的四件事</h2>
+        <p class="sec-desc">以下问题围绕寸止挑战天美传媒的主题范围整理，答案只覆盖本页已经说明的内容。</p>
+      </div>
+      <div class="faq">
+        <details open>
+          <summary>寸止挑战和一般的节奏练习有什么区别？</summary>
+          <p>区别在于判断依据。一般节奏练习关注“是否连贯”，寸止挑战更关注“停顿是否有效”。换句话说，它把停顿本身当作需要设计的内容，而不仅是推进过程中的间隙。</p>
+        </details>
+        <details>
+          <summary>天美传媒在这个主题里承担什么角色？</summary>
+          <p>在本页中，天美传媒是内容企划视角的来源：它提供选题组织、检查项提炼和框架复用的思路。寸止挑战天美传媒合起来，指向的是“玩法规则＋内容企划”这一组合主题，而非单一作品。</p>
+        </details>
+        <details>
+          <summary>停顿点越多越好吗？</summary>
+          <p>不是。停顿点过密会把节奏切碎，反而削弱张力的积累。更常见的建议是先集中在少数关键节点，再根据复盘结果调整。具体数量取决于本次挑战的边界设定。</p>
+        </details>
+        <details>
+          <summary>这个页面会提供下载吗？</summary>
+          <p>页面设置了下载入口，但当前仅作占位，尚未绑定实际文件。入口处于不可用状态，实际地址确定后会再开放。现阶段建议先阅读规则拆解与内容企划两部分。</p>
+        </details>
+      </div>
+    </div>
+  </section>
+
+  <!-- START -->
+  <section id="start" style="padding-top:10px;">
+    <div class="wrap">
+      <div class="cta">
+        <div>
+          <h2>准备开始一次寸止挑战</h2>
+          <p>按四环节顺序走一遍：设定边界、安排停顿点、判断是否续行、复盘节奏曲线。寸止挑战天美传媒把这条路径作为本专题的收束，读完后即可按步骤实践。</p>
+        </div>
+        <div class="cta-actions">
+          <a class="btn btn-primary" href="#rules">回看规则</a>
+          <a class="btn btn-ghost" href="#" download data-download-placeholder="true" aria-disabled="true" tabindex="-1" style="pointer-events:none;">下载</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+</main>
+
+<footer>
+  <div class="wrap">
+    <div class="foot-top">
+      <div class="foot-brand">
+        <svg viewBox="0 0 32 32" fill="none" aria-hidden="true">
+          <circle cx="16" cy="16" r="10" stroke="#e8b04b" stroke-width="2.2"/>
+          <path d="M16 8.5v7.5l5 3" stroke="#e8b04b" stroke-width="2.2" stroke-linecap="round"/>
+        </svg>
+        <b>寸止挑战天美传媒</b>
+      </div>
+      <nav class="foot-links" aria-label="页尾导航">
+        <a href="#overview">玩法速览</a>
+        <a href="#rules">规则拆解</a>
+        <a href="#media">内容企划</a>
+        <a href="#faq">常见问题</a>
+        <a href="#start">开始挑战</a>
+      </nav>
+    </div>
+    <div class="foot-bottom">
+      <span>寸止挑战天美传媒 · 玩法规则与内容企划专题首页</span>
+      <span>页面内容仅作主题介绍与阅读参考</span>
+    </div>
+  </div>
+</footer>
+
+</body>
+      </html>
